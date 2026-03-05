@@ -2646,17 +2646,53 @@
         body.mobile header {
             position: fixed;
             top: 0;
-            height: 50px
+            left: 0;
+            width: 100%;
+            height: auto;
+            background: #000;
+            z-index: 9999;
         }
 
         body.mobile header .logo {
-            top: 10px;
-            left: 15px;
-            width: 90px
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 10px auto;
+            width: 120px;
+            display: block;
+            text-align: center;
+            float: none;
         }
 
         body.mobile header .logo img {
             width: 100%
+        }
+
+        /* 모바일 탭 통합 스타일 */
+        body.mobile .tabs {
+            margin: 0;
+            padding: 0 10px 10px;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        body.mobile .tabs__item {
+            flex: 0 1 auto;
+            margin: 2px;
+            box-sizing: border-box;
+            min-width: auto !important;
+        }
+
+        body.mobile .tabs__link {
+            text-align: center;
+            padding: 8px 12px;
+            font-size: 14px;
+            white-space: nowrap;
+            border-radius: 4px;
+            display: block;
         }
 
         body.mobile header ul.topmenu {
@@ -8209,69 +8245,7 @@
                         font-size: 75%
                     }
 
-
-                    .tabs {
-                        margin: 0;
-                        padding-top: 50px;
-                        /* 로고 영역 확보 */
-                        list-style: none;
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        overflow-x: auto;
-                        -webkit-overflow-scrolling: touch;
-                        scrollbar-width: none;
-                        /* 파이어폭스 대응 */
-                    }
-
-                    .tabs::-webkit-scrollbar {
-                        display: none;
-                        /* 크롬, 사파리 대응 */
-                    }
-
-                    #tab_TOS {
-
-                        white-space: nowrap;
-
-                        min-width: 50px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_PRIVACY {
-                        white-space: nowrap;
-
-                        min-width: 50px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_POLICY {
-
-                        white-space: nowrap;
-
-                        min-width: 50px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_TEEN {
-
-                        white-space: nowrap;
-
-                        min-width: 50px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_EVENT {
-
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
-                    }
+                    /* 탭 스타일은 body.mobile에서 통합 관리함 */
 
                 }
 
@@ -8283,53 +8257,6 @@
                         width: 100%;
                         height: 100%;
                         font-size: 125%
-                    }
-
-
-
-
-                    #tab_TOS {
-
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_PRIVACY {
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_POLICY {
-
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_TEEN {
-
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
-                    }
-
-                    #tab_EVENT {
-
-                        white-space: nowrap;
-
-                        min-width: 100px;
-                        min-height: 10px;
-
                     }
 
                 }
@@ -8404,8 +8331,8 @@
             }
 
             body.mobile .container.maincontents {
-                padding-top: 101px !important;
-                /* 가로 탭 높이 반영하여 50px -> 100px 수준으로 상향 */
+                padding-top: 201px !important;
+                /* 로고 + 2단 탭 높이 반영하여 151px -> 201px로 상향 */
             }
 
             #TOS,
@@ -8421,7 +8348,8 @@
             body.mobile #TEEN,
             body.mobile #POLICY,
             body.mobile #EVENT {
-                scroll-margin-top: 50px;
+                scroll-margin-top: 200px;
+                /* 늘어난 헤더 높이에 맞춰 150px -> 200px로 상향 */
             }
     </style>
 
