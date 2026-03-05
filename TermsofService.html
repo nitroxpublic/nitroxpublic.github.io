@@ -66,6 +66,7 @@
                     var c = document.getElementById(b.TargetId);
                     if (!c) return;
                     this.l(c);
+                    if (d) window.scrollTo(0, 0);
                     for (var a = 0; a < this.b.length; a++)
                         if (this.b[a] == b) {
                             j(b.parentNode, "selected");
