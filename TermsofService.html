@@ -8212,23 +8212,21 @@
 
                     .tabs {
                         margin: 0;
-                        padding-top: 75px;
+                        padding-top: 50px;
+                        /* 로고 영역 확보 */
                         list-style: none;
-                        /*
-					display: table;
-					
-					table-layout: fixed;
-					
-					width: 100%;
-					
-					border:2px red solid;
-					*/
                         display: flex;
-                        align-content: flex-start;
-                        flex-direction: column;
-                        flex-wrap: wrap;
-                        overflow: auto;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none;
+                        /* 파이어폭스 대응 */
+                    }
 
+                    .tabs::-webkit-scrollbar {
+                        display: none;
+                        /* 크롬, 사파리 대응 */
                     }
 
                     #tab_TOS {
@@ -8406,7 +8404,8 @@
             }
 
             body.mobile .container.maincontents {
-                padding-top: 51px !important;
+                padding-top: 101px !important;
+                /* 가로 탭 높이 반영하여 50px -> 100px 수준으로 상향 */
             }
 
             #TOS,
